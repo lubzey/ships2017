@@ -19,6 +19,8 @@ import { HeroSearchComponent } from './hero-search.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent} from './shared/navbar/navbar.component';
 
+import { AboutComponent } from "./+about/about.component";
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -34,7 +36,8 @@ import { NavbarComponent} from './shared/navbar/navbar.component';
         HeroDetailComponent,
         HeroSearchComponent,
         FooterComponent,
-        NavbarComponent
+        NavbarComponent,
+        AboutComponent
     ],
     providers: [HeroService],
     bootstrap: [AppComponent]
