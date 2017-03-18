@@ -52,3 +52,36 @@ button.delete {
   background-color: gray !important;
   color:white;
 }
+
+
+
+li {
+    list-style-type: none;
+}
+ul {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.ships li img {
+	height: 200px;
+    max-width: 100%;
+    margin-top: 10px;
+}
+.selected div div {
+    background-color: black;
+    color: white;
+}
+.caption  {
+    background: none !important;
+}
+.ships li.selected div div:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+.ships li div div:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}

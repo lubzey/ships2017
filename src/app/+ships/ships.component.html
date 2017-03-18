@@ -1,0 +1,22 @@
+<h2 class="text-center">Корабите</h2>
+
+<div *ngIf="selectedHero">
+    <h2>
+        {{selectedHero.name | uppercase}} is my hero
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<ul class="ships row text-center">
+  <li *ngFor="let ship of heroes" [class.selected]="ship === selectedHero" (click)="onSelect(ship)">
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <img src="/assets/ships/ship{{ship.id}}.jpg">
+        <div class="caption">
+          <h3 class="text-center">{{ship.name}}</h3>
+          <p class="text-center">{{ship.year}}, {{ship.country}}</p>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

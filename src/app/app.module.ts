@@ -12,14 +12,14 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroService } from './hero.service';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './+home/dashboard.component';
-import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroSearchComponent } from './hero-search.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent} from './shared/navbar/navbar.component';
 
+import { DashboardComponent } from './+home/dashboard.component';
 import { AboutComponent } from "./+about/about.component";
+import { ShipsComponent } from "./+ships/ships.component";
 
 @NgModule({
     imports: [
@@ -32,12 +32,12 @@ import { AboutComponent } from "./+about/about.component";
     declarations: [
         AppComponent,
         DashboardComponent,
-        HeroesComponent,
         HeroDetailComponent,
         HeroSearchComponent,
         FooterComponent,
         NavbarComponent,
-        AboutComponent
+        AboutComponent,
+        ShipsComponent
     ],
     providers: [HeroService],
     bootstrap: [AppComponent]
