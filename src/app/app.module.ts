@@ -17,6 +17,7 @@ import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroSearchComponent } from './hero-search.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { NavbarComponent} from './shared/navbar/navbar.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { FooterComponent } from './shared/footer/footer.component';
         HeroesComponent,
         HeroDetailComponent,
         HeroSearchComponent,
-        FooterComponent
+        FooterComponent,
+        NavbarComponent
     ],
     providers: [HeroService],
     bootstrap: [AppComponent]

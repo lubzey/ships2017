@@ -1,6 +1,6 @@
-<div class="row navigation-bar">
+<div class="container-fluid navigation-bar">
   <div class="pull-left">
-    <img src="../../assets/imgs/logo2.jpg" class="pull-left">
+    <img src="assets/logo-ship.jpg" class="pull-left">
     <div class="test">
       <h3>
         Юлиан
@@ -11,6 +11,8 @@
     </div>
   </div>
   <nav class="menu pull-right">
+    <a routerLink="/dashboard" routerLinkActive="active">Home</a>
+    <a routerLink="/heroes" routerLinkActive="active">Ships</a>
     <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">
       <span class="nav-label">НАЧАЛО</span>
     </a>

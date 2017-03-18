@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 /**
  * This class represents the navigation bar component.
  */
 @Component({
   moduleId: module.id,
-  selector: 'vertical-navbar',
+  selector: 'navbar',
   templateUrl: 'navbar.component.html',
-  styleUrls: ['navbar.component.css'],
-  directives: [ROUTER_DIRECTIVES]
+  styleUrls: ['navbar.component.css']
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  logopath = 'app/shared/navbar/imgs/logo-ship.jpg';
+}
