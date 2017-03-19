@@ -8,7 +8,7 @@
 </div>
 
 <ul class="ships row text-center">
-  <li *ngFor="let ship of heroes" [class.selected]="ship === selectedHero" (click)="onSelect(ship)">
+  <li *ngFor="let ship of heroes" [class.selected]="ship === selectedHero" (click)="gotoDetail(ship)">
     <div class="col-md-3">
       <div class="thumbnail">
         <img src="/assets/ships/ship{{ship.id}}.jpg">

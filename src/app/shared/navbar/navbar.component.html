@@ -13,12 +13,7 @@
   <nav class="menu pull-right">
     <a routerLink="/dashboard" routerLinkActive="active">НАЧАЛО</a>
     <a routerLink="/ships" routerLinkActive="active">КОРАБИ</a>
-
-    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/about']">
-      <span class="nav-label">ЗА АВТОРА</span>
-    </a>
-    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/contact']">
-      <span class="nav-label">КОНТАКТ</span>
-    </a>
+    <a routerLink="/about" routerLinkActive="active">ЗА АВТОРА</a>
+    <a routerLink="/contacts" routerLinkActive="active">КОНТАКТИ</a>
   </nav>
 </div>
