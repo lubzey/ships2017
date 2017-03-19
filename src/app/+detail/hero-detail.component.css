@@ -18,3 +18,12 @@ button:disabled {
 .row {
   margin-top: 20px;
 }
+h1 {
+  padding-bottom: 10px;
+}
+button {
+  margin-bottom: 50px;
+}
+.padme {
+  padding-top: 8px;
+}

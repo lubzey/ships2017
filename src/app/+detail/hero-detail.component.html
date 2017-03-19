@@ -4,9 +4,11 @@
 		<img src="/assets/ships/ship{{hero.id}}.jpg" class="img-rounded col-md-offset-1 col-md-5 text-center">
 
 		<div class="col-md-5">
+
 			<div class="row">
 				<h1 class="col-md-6">{{hero.name}}</h1>
-				<div class="col-md-6">
+
+				<div class="col-md-6 padme">
 					<label class="col-md-6 control-label">Country:</label>
 					<div class="col-md-6">
 						<p>{{hero.country}}</p>
@@ -23,10 +25,9 @@
 				<p class="text-justify">{{hero.description}}</p>
 			</div>
 
-
+			<div class="row">
+				<button class="col-md-offset-8 col-md-4" (click)="goBack()">Обратно</button>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="row">
-	<button class="col-md-offset-8 col-md-3" (click)="goBack()">Обратно</button>
 </div>
