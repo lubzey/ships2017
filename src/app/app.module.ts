@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { CarouselModule } from 'ng2-bootstrap';
 import './rxjs-extensions';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,7 +21,8 @@ import { ShipsComponent } from "./+ships/ships.component";
 import { HeroDetailComponent } from './+detail/hero-detail.component';
 
 import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent} from './shared/navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 
 @NgModule({
     imports: [
@@ -28,7 +30,8 @@ import { NavbarComponent} from './shared/navbar/navbar.component';
         FormsModule,
         HttpModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService),
-        AppRoutingModule
+        AppRoutingModule,
+        CarouselModule
     ],
     declarations: [
         AppComponent,
@@ -38,7 +41,8 @@ import { NavbarComponent} from './shared/navbar/navbar.component';
         FooterComponent,
         NavbarComponent,
         AboutComponent,
-        ShipsComponent
+        ShipsComponent,
+        CarouselComponent
     ],
     providers: [HeroService],
     bootstrap: [AppComponent]

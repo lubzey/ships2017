@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Hero } from './hero';
+import { Ship } from './shared/models/ship';
 
 @Injectable()
 export class HeroService {
@@ -13,7 +13,7 @@ export class HeroService {
 
     constructor(private http: Http) { }
 
-    create(name: string): Promise<Hero> {
+    create(name: string): Promise<Ship> {
         return this.http
             .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
@@ -21,7 +21,7 @@ export class HeroService {
             .catch(this.handleError);
     }
 
-    update(hero: Hero): Promise<Hero> {
+    update(hero: Ship): Promise<Ship> {
         const url = `${this.heroesUrl}/${hero.id}`;
         return this.http
             .put(url, JSON.stringify(hero), { headers: this.headers })
@@ -38,20 +38,20 @@ export class HeroService {
             .catch(this.handleError);
     }
 
-    getHeroes(): Promise<Hero[]> {
+    getHeroes(): Promise<Ship[]> {
         return this.http.get(this.heroesUrl)
             .toPromise()
-            .then(response => response.json().data as Hero[])
+            .then(response => response.json().data as Ship[])
             .catch(this.handleError);
     }
 
-    getHeroesSlowly(): Promise<Hero[]> {
-        return new Promise<Hero[]>(resolve =>
+    getHeroesSlowly(): Promise<Ship[]> {
+        return new Promise<Ship[]>(resolve =>
             setTimeout(resolve, 2000)) // delay 2 seconds
             .then(() => this.getHeroes());
     }
 
-    getHero(id: number): Promise<Hero> {
+    getHero(id: number): Promise<Ship> {
         return this.getHeroes()
             .then(heroes => heroes.find(hero => hero.id === id));
     }

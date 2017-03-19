@@ -4,7 +4,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { HeroService } from '../hero.service';
-import { Hero } from '../hero';
+import { Ship } from '../shared/models/ship';
+import { CarouselComponent } from '../shared/carousel/carousel.component';
 
 @Component({
   moduleId: module.id,
@@ -13,7 +14,7 @@ import { Hero } from '../hero';
   styleUrls: ['hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+  @Input() hero: Ship;
 
   constructor(
     private heroService: HeroService,
@@ -26,7 +27,7 @@ export class HeroDetailComponent implements OnInit {
       let id = +params['id'];
       this.heroService.getHero(id)
         .then(hero => this.hero = hero);
-    });
+    });    
   }
 
   goBack(): void {

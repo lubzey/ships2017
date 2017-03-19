@@ -3,5 +3,6 @@ export class Ship {
   name: string;
   year: number;
   country: string;
-  description: string;  
+  description: string;
+  photos: string[];
 }
