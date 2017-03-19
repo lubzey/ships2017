@@ -3,4 +3,5 @@ export class Ship {
   name: string;
   year: number;
   country: string;
+  description: string;  
 }
