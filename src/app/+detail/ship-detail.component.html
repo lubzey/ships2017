@@ -1,7 +1,13 @@
 <div *ngIf="ship">
 	<div class="row">
 
-		<img src="/assets/ships/ship{{ship.id}}.jpg" class="img-rounded col-md-offset-1 col-md-5 text-center">
+		<div class="col-md-offset-1 col-md-5 text-center">
+			<img src="/assets/ships/ship{{ship.id}}.jpg" class="img-rounded row selected-image">
+
+			<div class="row">
+				<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" alt="" *ngFor="let photo of ship.photos" class="col-md-4 img-rounded">
+			</div>
+		</div>
 
 		<div class="col-md-5">
 
@@ -12,7 +18,11 @@
 				</div>
 			</div>
 
+
+
 			<div class="row">
+				<div class="col-md-6">
+				</div>
 				<div class="col-md-6 padme">
 					<label class="col-md-8 control-label">Произход:</label>
 					<div class="col-md-4">
@@ -26,7 +36,7 @@
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row line-breaker">
 				<p class="text-justify">{{ship.description}}</p>
 			</div>
 
@@ -36,8 +46,8 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<!--<div class="row">
 		<carousel-basic [ship]="ship"></carousel-basic>
-	</div>
+	</div>-->
 
 </div>
