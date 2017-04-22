@@ -20,8 +20,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ShipService.getShips()
-      .then(ships => this.ships = ships.slice(1, 5));
+    this.ShipService.getShortShips()
+      .then(ships => this.ships = ships);
   }
 
   gotoDetail(ship: Ship): void {

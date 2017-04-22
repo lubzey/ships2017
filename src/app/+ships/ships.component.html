@@ -1,14 +1,14 @@
 <h2 class="text-center">Кораби</h2>
 
-<div *ngIf="selectedHero">
+<div *ngIf="selectedShip">
     <h2>
-        {{selectedHero.name | uppercase}} is my hero
+        {{selectedShip.name | uppercase}} is my ship
     </h2>
     <button (click)="gotoDetail()">View Details</button>
 </div>
 
 <ul class="ships row text-center">
-  <li *ngFor="let ship of ships" [class.selected]="ship === selectedHero" (click)="gotoDetail(ship)">
+  <li *ngFor="let ship of ships" [class.selected]="ship === selectedShip" (click)="gotoDetail(ship)">
     <div class="col-md-3">
       <div class="thumbnail">
         <img src="/assets/ships/ship{{ship.id}}.jpg">

@@ -21,12 +21,12 @@ export class ShipService {
             .catch(this.handleError);
     }
 
-    update(hero: Ship): Promise<Ship> {
-        const url = `${this.shipsUrl}/${hero.id}`;
+    update(ship: Ship): Promise<Ship> {
+        const url = `${this.shipsUrl}/${ship.id}`;
         return this.http
-            .put(url, JSON.stringify(hero), { headers: this.headers })
+            .put(url, JSON.stringify(ship), { headers: this.headers })
             .toPromise()
-            .then(() => hero)
+            .then(() => ship)
             .catch(this.handleError);
     }
 
@@ -45,7 +45,14 @@ export class ShipService {
             .catch(this.handleError);
     }
 
-    getHeroesSlowly(): Promise<Ship[]> {
+    getShortShips(): Promise<Ship[]> {
+        return this.http.get(this.shipsUrl)
+            .toPromise()
+            .then(response => response.json().data.slice(0, 4) as Ship[])
+            .catch(this.handleError);
+    }
+
+    getShipsSlowly(): Promise<Ship[]> {
         return new Promise<Ship[]>(resolve =>
             setTimeout(resolve, 2000)) // delay 2 seconds
             .then(() => this.getShips());
@@ -53,7 +60,7 @@ export class ShipService {
 
     getShip(id: number): Promise<Ship> {
         return this.getShips()
-            .then(heroes => heroes.find(hero => hero.id === id));
+            .then(ships => ships.find(ship => ship.id === id));
     }
 
     private handleError(error: any): Promise<any> {

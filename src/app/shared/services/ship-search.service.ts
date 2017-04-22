@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Ship } from '.././models/ship';
 
 @Injectable()
-export class HeroSearchService {
+export class ShipSearchService {
 
     constructor(private http: Http) { }
     

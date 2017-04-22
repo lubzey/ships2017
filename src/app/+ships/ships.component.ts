@@ -18,12 +18,12 @@ export class ShipsComponent implements OnInit {
     private ShipService: ShipService) { }
 
 
-  getHeroes(): void {
+  getShips(): void {
     this.ShipService.getShips().then(ships => this.ships = ships);
   }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getShips();
   }
 
   gotoDetail(ship: Ship): void {

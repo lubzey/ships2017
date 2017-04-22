@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import { HeroSearchService } from '../services/hero-search.service';
+import { ShipSearchService } from '../services/ship-search.service';
 import { Ship } from '../models/ship';
 
 @Component({
@@ -11,14 +11,14 @@ import { Ship } from '../models/ship';
     selector: 'ship-search',
     templateUrl: 'ship-search.component.html',
     styleUrls: ['ship-search.component.css'],
-    providers: [HeroSearchService]
+    providers: [ShipSearchService]
 })
 export class ShipSearchComponent implements OnInit {
     ships: Observable<Ship[]>;
     private searchTerms = new Subject<string>();
 
     constructor(
-        private heroSearchService: HeroSearchService,
+        private shipSearchService: ShipSearchService,
         private router: Router) { }
 
     // Push a search term into the observable stream.
@@ -32,8 +32,8 @@ export class ShipSearchComponent implements OnInit {
             .distinctUntilChanged()   // ignore if next search term is same as previous
             .switchMap(term => term   // switch to new observable each time
                 // return the http search observable
-                ? this.heroSearchService.search(term)
-                // or the observable of empty heroes if no search term
+                ? this.shipSearchService.search(term)
+                // or the observable of empty ships if no search term
                 : Observable.of<Ship[]>([]))
             .catch(error => {
                 // TODO: real error handling
