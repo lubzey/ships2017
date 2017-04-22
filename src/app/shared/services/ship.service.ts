@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Ship } from './shared/models/ship';
+import { Ship } from '../../shared/models/ship';
 
 @Injectable()
 export class ShipService {
@@ -51,7 +51,7 @@ export class ShipService {
             .then(() => this.getShips());
     }
 
-    getHero(id: number): Promise<Ship> {
+    getShip(id: number): Promise<Ship> {
         return this.getShips()
             .then(heroes => heroes.find(hero => hero.id === id));
     }

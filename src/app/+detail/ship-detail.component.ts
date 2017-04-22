@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { ShipService } from '../ship.service';
+import { ShipService } from '../shared/services/ship.service';
 import { Ship } from '../shared/models/ship';
 import { CarouselComponent } from '../shared/carousel/carousel.component';
 
@@ -25,7 +25,7 @@ export class ShipDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.ShipService.getHero(id)
+      this.ShipService.getShip(id)
         .then(ship => this.ship = ship);
     });    
   }

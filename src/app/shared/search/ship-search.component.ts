@@ -3,18 +3,18 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import { HeroSearchService } from './hero-search.service';
-import { Hero } from './hero';
+import { HeroSearchService } from '../services/hero-search.service';
+import { Ship } from '../models/ship';
 
 @Component({
     moduleId: module.id,
-    selector: 'hero-search',
-    templateUrl: 'hero-search.component.html',
-    styleUrls: ['hero-search.component.css'],
+    selector: 'ship-search',
+    templateUrl: 'ship-search.component.html',
+    styleUrls: ['ship-search.component.css'],
     providers: [HeroSearchService]
 })
-export class HeroSearchComponent implements OnInit {
-    heroes: Observable<Hero[]>;
+export class ShipSearchComponent implements OnInit {
+    ships: Observable<Ship[]>;
     private searchTerms = new Subject<string>();
 
     constructor(
@@ -27,23 +27,23 @@ export class HeroSearchComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.heroes = this.searchTerms
+        this.ships = this.searchTerms
             .debounceTime(300)        // wait for 300ms pause in events
             .distinctUntilChanged()   // ignore if next search term is same as previous
             .switchMap(term => term   // switch to new observable each time
                 // return the http search observable
                 ? this.heroSearchService.search(term)
                 // or the observable of empty heroes if no search term
-                : Observable.of<Hero[]>([]))
+                : Observable.of<Ship[]>([]))
             .catch(error => {
                 // TODO: real error handling
                 console.log(error);
-                return Observable.of<Hero[]>([]);
+                return Observable.of<Ship[]>([]);
             });
     }
     
-    gotoDetail(hero: Hero): void {
-        let link = ['/detail', hero.id];
+    gotoDetail(ship: Ship): void {
+        let link = ['/detail', ship.id];
         this.router.navigate(link);
     }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from '.././hero';
-import { ShipService } from '.././ship.service';
+import { Ship } from '.././shared/models/ship';
+import { ShipService } from '.././shared/services/ship.service';
 
 @Component({
   moduleId: module.id,
@@ -12,21 +12,20 @@ import { ShipService } from '.././ship.service';
 })
 export class DashboardComponent implements OnInit {
 
-  heroes: Hero[] = [];
+  ships: Ship[] = [];
 
   constructor(
     private router: Router,
     private ShipService: ShipService) {
   }
 
-
   ngOnInit(): void {
     this.ShipService.getShips()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+      .then(ships => this.ships = ships.slice(1, 5));
   }
 
-  gotoDetail(hero: Hero): void {
-    let link = ['/detail', hero.id];
+  gotoDetail(ship: Ship): void {
+    let link = ['/detail', ship.id];
     this.router.navigate(link);
   }
 }

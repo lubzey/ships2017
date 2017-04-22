@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Ship } from '../shared/models/ship';
-import { ShipService } from '../ship.service';
+import { ShipService } from '../shared/services/ship.service';
 
 @Component({
   moduleId: module.id,

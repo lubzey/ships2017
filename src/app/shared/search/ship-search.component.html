@@ -1,0 +1,9 @@
+<div id="search-component">
+    <h4>Ship Search</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <div>
+        <div *ngFor="let ship of ships | async" (click)="gotoDetail(ship)" class="search-result">
+            {{ship.name}}
+        </div>
+    </div>
+</div>
