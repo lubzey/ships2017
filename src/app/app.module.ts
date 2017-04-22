@@ -12,7 +12,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './shared/services/in-memory-data.service';
 import { ShipService } from './shared/services/ship.service';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './shared/app/app.component';
 import { ShipSearchComponent } from './shared/search/ship-search.component';
 
 import { DashboardComponent } from './+home/dashboard.component';
