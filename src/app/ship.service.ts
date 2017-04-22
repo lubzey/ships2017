@@ -6,23 +6,23 @@ import 'rxjs/add/operator/toPromise';
 import { Ship } from './shared/models/ship';
 
 @Injectable()
-export class HeroService {
+export class ShipService {
 
-    private heroesUrl = 'app/heroes';  // URL to web api
+    private shipsUrl = 'app/ships';  // URL to web api
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
     constructor(private http: Http) { }
 
     create(name: string): Promise<Ship> {
         return this.http
-            .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.shipsUrl, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
             .then(res => res.json().data)
             .catch(this.handleError);
     }
 
     update(hero: Ship): Promise<Ship> {
-        const url = `${this.heroesUrl}/${hero.id}`;
+        const url = `${this.shipsUrl}/${hero.id}`;
         return this.http
             .put(url, JSON.stringify(hero), { headers: this.headers })
             .toPromise()
@@ -31,15 +31,15 @@ export class HeroService {
     }
 
     delete(id: number): Promise<void> {
-        const url = `${this.heroesUrl}/${id}`;
+        const url = `${this.shipsUrl}/${id}`;
         return this.http.delete(url, { headers: this.headers })
             .toPromise()
             .then(() => null)
             .catch(this.handleError);
     }
 
-    getHeroes(): Promise<Ship[]> {
-        return this.http.get(this.heroesUrl)
+    getShips(): Promise<Ship[]> {
+        return this.http.get(this.shipsUrl)
             .toPromise()
             .then(response => response.json().data as Ship[])
             .catch(this.handleError);
@@ -48,11 +48,11 @@ export class HeroService {
     getHeroesSlowly(): Promise<Ship[]> {
         return new Promise<Ship[]>(resolve =>
             setTimeout(resolve, 2000)) // delay 2 seconds
-            .then(() => this.getHeroes());
+            .then(() => this.getShips());
     }
 
     getHero(id: number): Promise<Ship> {
-        return this.getHeroes()
+        return this.getShips()
             .then(heroes => heroes.find(hero => hero.id === id));
     }
 

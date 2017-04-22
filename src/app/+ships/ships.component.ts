@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Ship } from '../shared/models/ship';
+import { ShipService } from '../ship.service';
 
 @Component({
   moduleId: module.id,
@@ -11,23 +11,23 @@ import { HeroService } from '../hero.service';
   styleUrls: ['ships.component.css']
 })
 export class ShipsComponent implements OnInit {
-  heroes: Hero[];
+  ships: Ship[];
 
   constructor(
     private router: Router,
-    private heroService: HeroService) { }
+    private ShipService: ShipService) { }
 
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.ShipService.getShips().then(ships => this.ships = ships);
   }
 
   ngOnInit(): void {
     this.getHeroes();
   }
 
-  gotoDetail(hero: Hero): void {
-    let link = ['/detail', hero.id];
+  gotoDetail(ship: Ship): void {
+    let link = ['/detail', ship.id];
     this.router.navigate(link);
   }
 }

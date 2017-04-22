@@ -8,7 +8,7 @@ import { Ship } from '../models/ship';
     templateUrl: './carousel.component.html'
 })
 export class CarouselComponent implements OnInit {
-    @Input() hero: Ship;
+    @Input() ship: Ship;
 
     constructor() { }
 

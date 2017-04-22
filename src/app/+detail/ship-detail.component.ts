@@ -3,21 +3,21 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { HeroService } from '../hero.service';
+import { ShipService } from '../ship.service';
 import { Ship } from '../shared/models/ship';
 import { CarouselComponent } from '../shared/carousel/carousel.component';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-hero-detail',
-  templateUrl: 'hero-detail.component.html',
-  styleUrls: ['hero-detail.component.css']
+  selector: 'my-ship-detail',
+  templateUrl: 'ship-detail.component.html',
+  styleUrls: ['ship-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Ship;
+export class ShipDetailComponent implements OnInit {
+  @Input() ship: Ship;
 
   constructor(
-    private heroService: HeroService,
+    private ShipService: ShipService,
     private route: ActivatedRoute,
     private location: Location
   ) { }
@@ -25,8 +25,8 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.heroService.getHero(id)
-        .then(hero => this.hero = hero);
+      this.ShipService.getHero(id)
+        .then(ship => this.ship = ship);
     });    
   }
 

@@ -1,28 +1,28 @@
-<div *ngIf="hero">
+<div *ngIf="ship">
 	<div class="row">
 
-		<img src="/assets/ships/ship{{hero.id}}.jpg" class="img-rounded col-md-offset-1 col-md-5 text-center">
+		<img src="/assets/ships/ship{{ship.id}}.jpg" class="img-rounded col-md-offset-1 col-md-5 text-center">
 
 		<div class="col-md-5">
 
 			<div class="row">
-				<h1 class="col-md-6">{{hero.name}}</h1>
+				<h1 class="col-md-6">{{ship.name}}</h1>
 
 				<div class="col-md-6 padme">
 					<label class="col-md-6 control-label">Country:</label>
 					<div class="col-md-6">
-						<p>{{hero.country}}</p>
+						<p>{{ship.country}}</p>
 					</div>
 
 					<label class="col-md-6 control-label">Year:</label>
 					<div class="col-md-6">
-						<p>{{hero.year}}</p>
+						<p>{{ship.year}}</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<p class="text-justify">{{hero.description}}</p>
+				<p class="text-justify">{{ship.description}}</p>
 			</div>
 
 			<div class="row">
@@ -32,7 +32,7 @@
 	</div>
 
 	<div class="row">
-		<carousel-basic [hero]="hero"></carousel-basic>
+		<carousel-basic [ship]="ship"></carousel-basic>
 	</div>
 
 </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Hero } from '.././hero';
-import { HeroService } from '.././hero.service';
+import { ShipService } from '.././ship.service';
 
 @Component({
   moduleId: module.id,
@@ -16,12 +16,12 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private heroService: HeroService) {
+    private ShipService: ShipService) {
   }
 
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
+    this.ShipService.getShips()
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 
