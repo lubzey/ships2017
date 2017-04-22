@@ -6,16 +6,21 @@
 		<div class="col-md-5">
 
 			<div class="row">
-				<h1 class="col-md-6">{{ship.name}}</h1>
+				<div class="col-md-12">
+					<h1>{{ship.name}}</h1>
+					<h5>{{ship.originalName}}</h5>
+				</div>
+			</div>
 
+			<div class="row">
 				<div class="col-md-6 padme">
-					<label class="col-md-6 control-label">Country:</label>
-					<div class="col-md-6">
-						<p>{{ship.country}}</p>
+					<label class="col-md-8 control-label">Произход:</label>
+					<div class="col-md-4">
+						<p>{{ship.origin}}</p>
 					</div>
 
-					<label class="col-md-6 control-label">Year:</label>
-					<div class="col-md-6">
+					<label class="col-md-8 control-label">Пуснат на вода:</label>
+					<div class="col-md-4">
 						<p>{{ship.year}}</p>
 					</div>
 				</div>

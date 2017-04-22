@@ -1,8 +1,9 @@
 export class Ship {
   id: number;
   name: string;
-  year: number;
-  country: string;
+  originalName: string;  
+  year: string;
+  origin: string;
   description: string;
   photos: string[];
 }
