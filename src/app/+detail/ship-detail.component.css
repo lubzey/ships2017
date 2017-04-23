@@ -3,6 +3,8 @@ button {
   background-color: #eee;
   border: none;
   padding: 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 4px;
   cursor: hand;
 }
@@ -40,6 +42,7 @@ label {
 }
 .line-breaker {
   white-space: pre-line;
+  padding: 2px;
 }
 .active-image {
   width: 100%;
@@ -47,24 +50,31 @@ label {
 .selected {
   background: lightgray;
 }
-.thumb {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px;  
-  width: 33%;
-}
-.thumb:hover {
-  background: gray;
-}
 .thumb:active {
   background: black;
   transform: translateY(4px);
 }
-
 .detail {  
   margin-bottom: 50px;
   margin-top: 20px;
 }
 .title {
   margin-bottom: 20px;
+}
+.page {
+  z-index: -1;
+}
+.square {
+  float:left;
+  position: relative;
+  width: 30%;
+  padding-bottom : 0; /* = width for a 1:1 aspect ratio */
+  margin:1.66%;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+}
+.thumbnail:hover{
+  border-color: darkgrey !important;
+  background-color: #eee;
 }

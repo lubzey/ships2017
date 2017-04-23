@@ -1,17 +1,28 @@
 <div *ngIf="ship">
 	<div class="row detail">
 
-		<div class="col-md-offset-1 col-md-5 text-center">
+		<div class="col-md-offset-1 col-md-5 text-center page">
 
-			<img src="/assets/ships/{{ship.id}}/{{selectedPhoto}}.jpg" class="img-rounded row active-image row-eq-height">
+			<img src="/assets/ships/{{ship.id}}/{{selectedPhoto}}.jpg" class="img-rounded row active-image">
 		</div>
 
 		<div class="col-md-5">
 
 			<div class="row">
 				<div class="col-md-12 title">
-					<h1>{{ship.name}}</h1>				
+					<h1>{{ship.name}}</h1>
 					<h5>{{ship.originalName}}</h5>
+				</div>
+			</div>
+
+			<div class="row">
+				<div *ngFor="let photo of ship.photos" class="square">
+					<a class="thumbnail">
+						<div class="frontpage_square">
+							<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" class="img img-responsive full-width thumb" (click)="onSelect(photo)"
+							 [class.selected]="photo === selectedPhoto">
+						</div>
+					</a>
 				</div>
 			</div>
 
@@ -38,10 +49,12 @@
 				<button class="col-md-offset-8 col-md-4" (click)="goBack()">Обратно</button>
 			</div>
 
-			<div class="row">
-				<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" alt="" *ngFor="let photo of ship.photos" class="col-md-4 img-rounded thumb row-eq-height"
+
+
+			<!--<div class="row">
+				<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" alt="" *ngFor="let photo of ship.photos" class="col-md-4 img-rounded thumb"
 				 (click)="onSelect(photo)" [class.selected]="photo === selectedPhoto">
-			</div>
+			</div>-->
 		</div>
 	</div>
 </div>

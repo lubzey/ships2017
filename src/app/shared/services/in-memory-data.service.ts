@@ -26,14 +26,14 @@ export class InMemoryDataService implements InMemoryDbService {
       В безбрежния Пасифик „Златната кошута“ достига Африка, заобикаля континента покрай нос Добра Надежда и три месеца по-късно Дрейк се завръща в Англия с пълни трюмове с подправки и испанско злато и сребро. Това околосветско пътешествие му е коствало две години и десет месеца плаване. Пиратът разкрива на сънародниците си новите морски пътища, през които е минал, което дава значителна преднина на английския флот. В знак на уважение към Дрейк, кралица Елизабет I се качва на пиратския му кораб и го обсипва с почести. Мореплавателят ѝ предава значителна част от испанските съкровища.`,
         photos: ['ship1', 'ship2', 'ship3']
       },
-      { id: 3, name: 'Blitzkrieg', year: '1904', origin: 'Germany', description: lorem },
-      { id: 4, name: 'Titanic', year: '1570', origin: 'England', description: lorem },
-      { id: 5, name: 'Magneta', year: '1746', origin: 'Scotland', description: lorem },
-      { id: 6, name: 'RubberMan', year: '1850', origin: 'Portugal', description: lorem },
-      { id: 7, name: 'Dynama', year: '1900', origin: 'Bulgaria', description: lorem },
-      { id: 8, name: 'Dr IQ', year: '1923', origin: 'Russia', description: lorem },
-      { id: 9, name: 'Magma', year: '1898', origin: 'Spain', description: lorem },
-      { id: 10, name: 'Tornado', year: '1868', origin: 'China', description: lorem }
+      { id: 3, name: 'Blitzkrieg', year: '1904', origin: 'Germany', description: lorem, photos: ['ship1', 'ship2', 'ship3'] },
+      { id: 4, name: 'Titanic', year: '1570', origin: 'England', description: lorem, photos: ['ship1', 'ship2', 'ship3'] },
+      { id: 5, name: 'Magneta', year: '1746', origin: 'Scotland', description: lorem, photos: ['ship1', 'ship2', 'ship3'] },
+      { id: 6, name: 'RubberMan', year: '1850', origin: 'Portugal', description: lorem, photos: ['ship1', 'ship2', 'ship3'] },
+      { id: 7, name: 'Dynama', year: '1900', origin: 'Bulgaria', description: lorem, photos: ['ship1', 'ship2', 'ship3'] },
+      { id: 8, name: 'Dr IQ', year: '1923', origin: 'Russia', description: lorem, photos: ['ship1', 'ship2', 'ship3'] },
+      { id: 9, name: 'Magma', year: '1898', origin: 'Spain', description: lorem, photos: ['ship1', 'ship2', 'ship3'] },
+      { id: 10, name: 'Tornado', year: '1868', origin: 'China', description: lorem, photos: ['ship1', 'ship2', 'ship3'] }
     ];
     return { ships };
   }
