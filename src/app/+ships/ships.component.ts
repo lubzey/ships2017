@@ -12,6 +12,7 @@ import { ShipService } from '../shared/services/ship.service';
 })
 export class ShipsComponent implements OnInit {
   ships: Ship[];
+  allShips: Ship[];
 
   constructor(
     private router: Router,
@@ -19,11 +20,18 @@ export class ShipsComponent implements OnInit {
 
 
   getShips(): void {
-    this.ShipService.getShips().then(ships => this.ships = ships);
+    this.ShipService.getShips().then(ships => {
+       this.ships = ships;
+       this.allShips = ships;
+    });
   }
 
   ngOnInit(): void {
     this.getShips();
+  }
+
+  search(terms: string): void {
+    this.ships = this.allShips.filter(ship => terms == '' || ship.name.toLowerCase().indexOf(terms.toLowerCase()) != -1);
   }
 
   gotoDetail(ship: Ship): void {

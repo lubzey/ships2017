@@ -1,10 +1,16 @@
-<h2 class="text-center">Кораби</h2>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h2 class="text-center">Кораби</h2>
+    <!--<ship-search class="pull-right"></ship-search>-->
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Търсене" class="pull-right" />
+  </div>
+</div>
 
 <div *ngIf="selectedShip">
-    <h2>
-        {{selectedShip.name | uppercase}} is my ship
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
+  <h2>
+    {{selectedShip.name | uppercase}} is my ship
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
 </div>
 
 <ul class="ships row text-center">

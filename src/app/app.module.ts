@@ -13,9 +13,7 @@ import { InMemoryDataService }  from './shared/services/in-memory-data.service';
 import { ShipService } from './shared/services/ship.service';
 
 import { AppComponent } from './shared/app/app.component';
-import { ShipSearchComponent } from './shared/search/ship-search.component';
 
-import { DashboardComponent } from './+home/dashboard.component';
 import { AboutComponent } from "./+about/about.component";
 import { ShipsComponent } from "./+ships/ships.component";
 import { ShipDetailComponent } from './+detail/ship-detail.component';
@@ -35,9 +33,7 @@ import { CarouselComponent } from './shared/carousel/carousel.component';
     ],
     declarations: [
         AppComponent,
-        DashboardComponent,
         ShipDetailComponent,
-        ShipSearchComponent,
         FooterComponent,
         NavbarComponent,
         AboutComponent,
