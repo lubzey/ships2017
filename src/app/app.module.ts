@@ -20,7 +20,6 @@ import { ShipDetailComponent } from './+detail/ship-detail.component';
 
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { CarouselComponent } from './shared/carousel/carousel.component';
 
 @NgModule({
     imports: [
@@ -37,8 +36,7 @@ import { CarouselComponent } from './shared/carousel/carousel.component';
         FooterComponent,
         NavbarComponent,
         AboutComponent,
-        ShipsComponent,
-        CarouselComponent
+        ShipsComponent
     ],
     providers: [ShipService],
     bootstrap: [AppComponent]

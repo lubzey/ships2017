@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12 text-center">
-    <h2 class="text-center">Кораби</h2>
+    <h2 class="title">Кораби</h2>
     <!--<ship-search class="pull-right"></ship-search>-->
     <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Търсене" class="pull-right" />
   </div>
@@ -14,8 +14,8 @@
 </div>
 
 <ul class="ships row text-center">
-  <li *ngFor="let ship of ships" [class.selected]="ship === selectedShip" (click)="gotoDetail(ship)">
-    <div class="col-md-3">
+  <li *ngFor="let ship of ships" [class.selected]="ship === selectedShip" (click)="gotoDetail(ship)" class="col-md-3">
+    <div>
       <div class="thumbnail">
         <img src="/assets/ships/ship{{ship.id}}.jpg">
         <div class="caption">

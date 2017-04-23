@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 
 import { ShipService } from '../shared/services/ship.service';
 import { Ship } from '../shared/models/ship';
-import { CarouselComponent } from '../shared/carousel/carousel.component';
 
 @Component({
   moduleId: module.id,
@@ -15,6 +14,7 @@ import { CarouselComponent } from '../shared/carousel/carousel.component';
 })
 export class ShipDetailComponent implements OnInit {
   @Input() ship: Ship;
+  selectedPhoto: string;
 
   constructor(
     private ShipService: ShipService,
@@ -27,7 +27,13 @@ export class ShipDetailComponent implements OnInit {
       let id = +params['id'];
       this.ShipService.getShip(id)
         .then(ship => this.ship = ship);
-    });    
+    });
+    this.selectedPhoto = "ship1";
+  }
+
+  onSelect(photo): void {
+    this.selectedPhoto = photo;
+    
   }
 
   goBack(): void {

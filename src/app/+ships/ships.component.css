@@ -31,10 +31,27 @@ ul {
 #search-box {
     position: absolute;
     top: 25px;
-    right: 70px;    
-    vertical-align: text-top;  
+    right: 70px;  
+}
+@media screen and (max-width: 658px) {
+    #search-box {
+    position: absolute;
+    top: 75px;
+    right: 50px;
+    }
+}
+@media screen and (max-width: 658px) {
+    .title {
+        text-align: left !important;
+        margin-left: 8%;
+    }
 }
 h2 {
     display: inline-block;
     width: 100%;
+}
+.ships li:active{    
+    transform: translateY(4px);
+    color: #607D8B;
+    background-color: #DDD;    
 }

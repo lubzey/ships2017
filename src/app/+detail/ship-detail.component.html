@@ -1,38 +1,32 @@
 <div *ngIf="ship">
-	<div class="row">
+	<div class="row detail">
 
 		<div class="col-md-offset-1 col-md-5 text-center">
-			<img src="/assets/ships/ship{{ship.id}}.jpg" class="img-rounded row selected-image">
 
-			<div class="row">
-				<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" alt="" *ngFor="let photo of ship.photos" class="col-md-4 img-rounded">
-			</div>
+			<img src="/assets/ships/{{ship.id}}/{{selectedPhoto}}.jpg" class="img-rounded row active-image row-eq-height">
 		</div>
 
 		<div class="col-md-5">
 
 			<div class="row">
-				<div class="col-md-12">
-					<h1>{{ship.name}}</h1>
+				<div class="col-md-12 title">
+					<h1>{{ship.name}}</h1>				
 					<h5>{{ship.originalName}}</h5>
 				</div>
 			</div>
 
-
-
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-2">
+					<label>Произход:</label>
 				</div>
-				<div class="col-md-6 padme">
-					<label class="col-md-8 control-label">Произход:</label>
-					<div class="col-md-4">
-						<p>{{ship.origin}}</p>
-					</div>
 
-					<label class="col-md-8 control-label">Пуснат на вода:</label>
-					<div class="col-md-4">
-						<p>{{ship.year}}</p>
-					</div>
+				<div class="col-md-3">
+					<p>{{ship.origin}}</p>
+				</div>
+
+				<div class="col-md-7">
+					<label>Пуснат на вода:</label>
+					<p>{{ship.year}}</p>
 				</div>
 			</div>
 
@@ -43,11 +37,11 @@
 			<div class="row">
 				<button class="col-md-offset-8 col-md-4" (click)="goBack()">Обратно</button>
 			</div>
+
+			<div class="row">
+				<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" alt="" *ngFor="let photo of ship.photos" class="col-md-4 img-rounded thumb row-eq-height"
+				 (click)="onSelect(photo)" [class.selected]="photo === selectedPhoto">
+			</div>
 		</div>
 	</div>
-
-	<!--<div class="row">
-		<carousel-basic [ship]="ship"></carousel-basic>
-	</div>-->
-
 </div>
