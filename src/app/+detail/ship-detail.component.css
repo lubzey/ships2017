@@ -65,16 +65,21 @@ label {
   z-index: -1;
 }
 .square {
+  height: 130px;
   float:left;
   position: relative;
   width: 30%;
   padding-bottom : 0; /* = width for a 1:1 aspect ratio */
   margin:1.66%;
-  background-position:center center;
-  background-repeat:no-repeat;
   background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
 }
 .thumbnail:hover{
   border-color: darkgrey !important;
   background-color: #eee;
+}
+.thumb{
+  height: 120px;
+}
+thumbnail {
+  margin: 0px !important;  
 }

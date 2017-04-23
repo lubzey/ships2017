@@ -14,7 +14,7 @@
 </div>
 
 <ul class="ships row text-center">
-  <li *ngFor="let ship of ships" [class.selected]="ship === selectedShip" (click)="gotoDetail(ship)" class="col-md-3">
+  <li *ngFor="let ship of ships" (click)="gotoDetail(ship)" class="col-md-3">
     <div>
       <div class="thumbnail">
         <img src="/assets/ships/ship{{ship.id}}.jpg">

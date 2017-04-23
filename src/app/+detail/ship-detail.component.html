@@ -3,7 +3,7 @@
 
 		<div class="col-md-offset-1 col-md-5 text-center page">
 
-			<img src="/assets/ships/{{ship.id}}/{{selectedPhoto}}.jpg" class="img-rounded row active-image">
+			<img src="/assets/ships/{{ship.id}}/{{selectedPhoto}}.jpg" class="row active-image">
 		</div>
 
 		<div class="col-md-5">
@@ -19,7 +19,7 @@
 				<div *ngFor="let photo of ship.photos" class="square">
 					<a class="thumbnail">
 						<div class="frontpage_square">
-							<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" class="img img-responsive full-width thumb" (click)="onSelect(photo)"
+							<img src="/assets/ships/{{ship.id}}/{{photo}}.jpg" class="img active-image img-responsive full-width thumb" (click)="onSelect(photo)"
 							 [class.selected]="photo === selectedPhoto">
 						</div>
 					</a>
